@@ -1,36 +1,21 @@
 import streamlit as st
-import random
+import requests
 
-st.title("Jogo de Quizz - Filmes de Terror")
+st.title("Jogo de Adivinhas com Pokémon")
 
-# Perguntas e respostas
-perguntas = {
-    "Qual é o nome do vilão do filme O Exorcista?": ["Pazuzu", "Satanás", "Lúcifer", "Belzebu"],
-    "Em que ano foi lançado o filme A Noite dos Mortos-Vivos?": ["1968", "1978", "1988", "1998"],
-    "Qual é o nome da personagem principal do filme O Silêncio dos Inocentes?": ["Clarice Starling", "FBI Agente", "Hannibal Lecter", "Buffalo Bill"],
-    "Qual é o nome do filme de terror que conta a história de um grupo de amigos que são perseguidos por um assassino?": ["Sexta-Feira 13", "O Terror de Halloween", "A Noite do Terror", "O Massacre da Serra Elétrica"],
-}
+def obter_pokemon():
+    resposta = requests.get("https://pokeapi.co/api/v2/pokemon/random")
+    dados = resposta.json()
+    return dados["name"], dados["types"][0]["type"]["name"]
 
-respostas = {
-    "Qual é o nome do vilão do filme O Exorcista?": "A",
-    "Em que ano foi lançado o filme A Noite dos Mortos-Vivos?": "A",
-    "Qual é o nome da personagem principal do filme O Silêncio dos Inocentes?": "A",
-    "Qual é o nome do filme de terror que conta a história de um grupo de amigos que são perseguidos por um assassino?": "A",
-}
-
-# Função para jogar
 def jogar():
-    placar = 0
-    for pergunta, alternativas in perguntas.items():
-        st.write(pergunta)
-        resposta = st.selectbox("Escolha a resposta", alternativas)
-        if resposta == alternativas[ord(respostas[pergunta]) - ord('A')]:
-            placar += 1
-            st.success("Resposta correta!")
-        else:
-            st.error("Resposta incorreta!")
-    st.write(f"Placar: {placar} pontos")
+    pokemon, tipo = obter_pokemon()
+    st.write("Adivinhe o nome do Pokémon!")
+    resposta = st.text_input("Digite o nome do Pokémon")
+    if resposta.lower() == pokemon:
+        st.success("Acertou! O Pokémon é " + pokemon + " do tipo " + tipo)
+    else:
+        st.error("Errou! O Pokémon era " + pokemon + " do tipo " + tipo)
 
-# Botão para jogar
 if st.button("Jogar"):
     jogar()
