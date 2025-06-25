@@ -1,5 +1,5 @@
 # Jogo de Forca - Rick e Morty
 
-O Jogo de Forca - Rick e Morty é um aplicativo web que testa sua habilidade em adivinhar nomes de personagens da série Rick e Morty. Aqui está como funciona: o app seleciona aleatoriamente um personagem, e você tenta adivinhar o nome sugerindo letras. A cada acerto, a letra é preenchida na palavra, e a cada erro, você perde uma chance. O objetivo é adivinhar o nome do personagem antes de esgotar todas as tentativas.
+O Jogo de Forca - Rick e Morty é um aplicativo web divertido que desafia você a adivinhar o nome de um personagem da série Rick e Morty. O aplicativo funciona da seguinte maneira: ele escolhe um personagem aleatório, e você tenta adivinhar o nome sugerindo letras. A cada letra correta, o aplicativo preenche a lacuna correspondente, e a cada letra incorreta, você perde uma tentativa.
 
-Para jogar, é simples: acesse o link https://agenten8n.streamlit.app/, clique no botão "Jogar" e comece a desvendar o nome do personagem escolhido. O app é fácil de usar e garantirá horas de diversão para fãs de Rick e Morty.
+Para visualizar o aplicativo e começar a jogar, basta acessar o link: https://agenten8n.streamlit.app/. Lá, você encontrará uma interface simples e intuitiva que o guiará pelo jogo. Clique no botão "Jogar" e divirta-se tentando adivinhar o nome do personagem escolhido!
