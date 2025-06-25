@@ -1,4 +1,3 @@
-```python
 import streamlit as st
 import requests
 import random
@@ -34,4 +33,3 @@ def jogar():
 
 if st.button("Jogar"):
     jogar()
-```
