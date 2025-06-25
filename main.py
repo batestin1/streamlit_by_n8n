@@ -1,21 +1,35 @@
 import streamlit as st
 import requests
+import random
 
-st.title("Jogo de Adivinhas com Pokémon")
+st.title("Jogo de Forca - Rick e Morty")
 
-def obter_pokemon():
-    resposta = requests.get("https://pokeapi.co/api/v2/pokemon/random")
+def obter_personagem():
+    resposta = requests.get("https://rickandmortyapi.com/api/character")
     dados = resposta.json()
-    return dados["name"], dados["types"][0]["type"]["name"]
+    personagens = dados["results"]
+    personagem = random.choice(personagens)
+    return personagem["name"]
 
 def jogar():
-    pokemon, tipo = obter_pokemon()
-    st.write("Adivinhe o nome do Pokémon!")
-    resposta = st.text_input("Digite o nome do Pokémon")
-    if resposta.lower() == pokemon:
-        st.success("Acertou! O Pokémon é " + pokemon + " do tipo " + tipo)
+    personagem = obter_personagem()
+    palavra = ["_"] * len(personagem)
+    tentativas = 6
+    st.write("Adivinhe o nome do personagem!")
+    while tentativas > 0 and "_" in palavra:
+        st.write(" ".join(palavra))
+        letra = st.text_input("Digite uma letra")
+        if letra in personagem:
+            for i, l in enumerate(personagem):
+                if l == letra:
+                    palavra[i] = letra
+        else:
+            tentativas -= 1
+            st.write(f"Incorreto! {tentativas} tentativas restantes")
+    if "_" not in palavra:
+        st.success("Acertou! O personagem é " + personagem)
     else:
-        st.error("Errou! O Pokémon era " + pokemon + " do tipo " + tipo)
+        st.error("Errou! O personagem era " + personagem)
 
 if st.button("Jogar"):
     jogar()
