@@ -1,4 +1,5 @@
-# Análise de Dados com Streamlit
-O aplicativo "Análise de Dados com Streamlit" é uma ferramenta interativa que permite aos usuários carregar arquivos CSV e realizar análises básicas dos dados. Com ele, é possível visualizar estatísticas descritivas para colunas numéricas, contagem de valores distintos para colunas não numéricas e até mesmo gerar wordclouds para visualizar a distribuição de palavras em colunas de texto.
+# Relatório de Análise de Dados
 
-Para utilizar o aplicativo, basta carregar um arquivo CSV e o app cuidará do resto, exibindo os resultados de forma clara e organizada. Você pode acessar o aplicativo através do link: https://agenten8n.streamlit.app/. Lá, você poderá explorar as funcionalidades do app e realizar análises de dados de forma rápida e fácil.
+O aplicativo "Relatório de Análise de Dados" é uma ferramenta interativa que permite aos usuários carregar arquivos CSV e realizar análises básicas dos dados. Com ele, é possível visualizar estatísticas descritivas para colunas numéricas, contagem de valores distintos para colunas não numéricas e até mesmo gerar wordclouds para visualizar a distribuição de palavras em colunas de texto. O app funciona de forma simples: após carregar o arquivo CSV, ele separa as colunas em numéricas e não numéricas, gera os relatórios e exibe os resultados de forma clara e organizada.
+
+Para utilizar o aplicativo, basta acessar o link https://agenten8n.streamlit.app/ e seguir as instruções na tela. Lá, você poderá carregar seu arquivo CSV e visualizar os resultados da análise de dados, incluindo as estatísticas descritivas, contagem de valores distintos e wordclouds. É uma ferramenta rápida e fácil de usar para obter insights valiosos dos seus dados.
